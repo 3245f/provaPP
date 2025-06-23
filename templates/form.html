@@ -398,8 +398,16 @@
 
                 <button type="button" onclick="removeExperienceNew(this)">Rimuovi</button>
     `   ;
-        // Aggiunge il nuovo blocco al contenitore specificato
-        container.appendChild(newExperience);
+            // Aggiunge il nuovo blocco al contenitore specificato
+            container.appendChild(newExperience);
+
+             // --- AGGIUNTA FONDAMENTALE: Ricollega l'evento onchange programmaticamente ---
+            const newSelect = newExperience.querySelector(`select[name="Ambito_${type}[]"]`);
+            if (newSelect) {
+                newSelect.onchange = function() {
+                    toggleNomeAzienda(this);
+                };
+            }
         }
 
 
