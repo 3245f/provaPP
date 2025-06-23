@@ -346,6 +346,61 @@
         }
 
 
+
+        // Funzione per aggiungere un nuovo blocco di esperienza per i progetti di Sviluppo (Applicativi, Firmware, Web, Mobile, Scada, Plc)
+        // containerId: l'ID del div dove aggiungere il nuovo blocco (es. 'applicativi-container')
+        // type: il tipo specifico di progetto (es. 'applicativi', 'firmware')
+        function addExperienceApplicativi(containerId, type) {
+            // Ottiene il riferimento al contenitore HTML dove inserire la nuova esperienza
+            let container = document.getElementById(containerId);
+            // Controlla se esiste già un contatore per questo 'type' di esperienza
+            if (!experienceCounters[type]) {
+                experienceCounters[type] = 2; // Inizia da 2 perché il primo blocco è già presente nel HTML statico
+            } else {
+                experienceCounters[type]++; // Incrementa il contatore per la prossima esperienza
+            }
+
+            // Cerca l'elemento che contiene il titolo dell'esperienza (es. <h4 id="applicativi">Applicativi</h4>)
+            // Questo serve per includere il nome dell'area di progetto nel titolo del blocco esperienza dinamico
+            let experienceTitleElement = document.querySelector(`#${type}`);
+            let experienceTitle = experienceTitleElement ? experienceTitleElement.textContent : "Esperienza senza titolo";
+
+            // Crea un nuovo elemento div che conterrà il blocco di esperienza
+            let newExperience = document.createElement("div");
+            // Aggiunge una classe CSS per lo styling
+            newExperience.classList.add("experience-block");
+            // Imposta l'innerHTML del nuovo div con la struttura HTML per i campi dell'esperienza
+            newExperience.innerHTML = `
+
+                <h4>Esperienza #${experienceCounters[type]} ${experienceTitle}</h4>
+                <label>Linguaggi di programmazione usati:</label>
+                <input type="text" name="linguaggi_${type}[]"><br><br>
+                <label>Tool utilizzati:</label>
+                <input type="text" name="tool_${type}[]"><br><br>
+                <label>Ambito progetto:</label>
+                <select name="Ambito_${type}[]" onchange="toggleNomeAzienda(this)">
+                    <option value="">Seleziona...</option> <option value="Aziendale">Aziendale</option>
+                    <option value="Universitario">Universitario</option>
+                </select><br><br>
+
+                <div class="nome-azienda-field" style="display: none;">
+                    <label>Nome Azienda:</label>
+                    <input type="text" name="nome_azienda_${type}[]"><br><br>
+                </div>
+                <label>Durata:</label>
+                <input type="text" name="durata_${type}[]"><br><br>            
+                <label>Descrizione del progetto:</label>
+                <textarea name="descrizione_${type}[]"
+                                    oninput="autoExpand(this); autoExpandWidth(this)" 
+                                    style="width: 100px; min-width: 100px; height: 50px; overflow: hidden; white-space: nowrap;"></textarea><br><br>
+
+                <button type="button" onclick="removeExperienceNew(this)">Rimuovi</button>
+    `   ;
+        // Aggiunge il nuovo blocco al contenitore specificato
+        container.appendChild(newExperience);
+        }
+
+
         // Funzione new per aggiungere un nuovo blocco di esperienza per i progetti di Sviluppo (Applicativi, Firmware, Web, Mobile, Scada, Plc)
         function addExperienceApp(containerId, area) {
             const container = document.getElementById(containerId);
@@ -975,7 +1030,7 @@
                     </div>
                 </div>
                 <!-- Pulsante per aggiungere un'altra esperienza in Applicativi -->
-                <button type="button" onclick="addExperienceApp('applicativi-container', 'applicativi')">Aggiungi un'altra esperienza</button><br><br>
+                <button type="button" onclick="addExperienceApplicativi('applicativi-container', 'applicativi')">Aggiungi un'altra esperienza</button><br><br>
             </div>
 
             <!-- Sviluppo firmware -->               
