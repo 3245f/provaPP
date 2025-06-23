@@ -40,7 +40,7 @@
             display: block;
            /* margin-bottom: 8px;*/
            /* font-weight: 500; */
-        /* color: #4a4a4a; */
+           /* color: #4a4a4a; */
            /* font-size: 0.95em; */
             /*incremento font per le label relative alle domande*/
             margin-bottom: 5px;
@@ -1012,15 +1012,18 @@
                         <label>Tool utilizzati:</label>
                         <input type="text" name="tool_applicativi[]"><br><br>           
                         <label>Ambito progetto:</label>
-                        <select name="Ambito_applicativi[]" onchange="toggleNomeAzienda(this)"> <option value="">Seleziona...</option> <option value="Aziendale">Aziendale</option>
-                <option value="Universitario">Universitario</option>
-            </select><br><br>
+                        <select name="Ambito_applicativi[]" onchange="toggleNomeAzienda(this)"> 
+                            <option value="">Seleziona...</option>
+                            <option value="Aziendale">Aziendale</option>
+                            <option value="Universitario">Universitario</option>
+                        </select><br><br>
 
-            <div class="nome-azienda-field" style="display: none;">
-                <label>Nome Azienda:</label>
-                <input type="text" name="nome_azienda_applicativi[]"><br><br>
-            </div>
+                        <div class="nome-azienda-field" style="display: none;">
+                            <label>Nome Azienda:</label>
+                            <input type="text" name="nome_azienda_applicativi[]"><br><br>
+                        </div>
                         </select><br><br>     
+
                         <label>Durata attività (specificare mesi/anni):</label>
                         <input type="text" name="durata_applicativi[]"><br><br>                                                       
                         <label>Descrizione del progetto:</label>
@@ -1044,10 +1047,23 @@
                         <label>Tool utilizzati:</label>
                         <input type="text" name="tool_firmware[]"><br><br>           
                         <label>Ambito progetto:</label>
-                        <select name="Ambito_firmware[]">
+                        <!--select name="Ambito_firmware[]">
                             <option value="Aziendale">Aziendale</option>
                             <option value="Universitario">Universitario</option>
+                        </select><br><br-->
+                        
+                        <select name="Ambito_firmware[]" onchange="toggleNomeAzienda(this)"> 
+                            <option value="">Seleziona...</option>
+                            <option value="Aziendale">Aziendale</option>
+                            <option value="Universitario">Universitario</option>
+                        </select><br><br>
+
+                        <div class="nome-azienda-field" style="display: none;">
+                            <label>Nome Azienda:</label>
+                            <input type="text" name="nome_azienda_applicativi[]"><br><br>
+                        </div>
                         </select><br><br> 
+
                         <label>Durata attività (specificare mesi/anni):</label>
                         <input type="text" name="durata_firmware[]"><br><br>                                    
                         <label>Descrizione del progetto:</label>
@@ -1070,10 +1086,23 @@
                         <label>Tool utilizzati:</label>
                         <input type="text" name="tool_web[]"><br><br>           
                         <label>Ambito progetto:</label>
-                        <select name="Ambito_web[]">
+                        <!-- select name="Ambito_web[]">
                             <option value="Aziendale">Aziendale</option>
                             <option value="Universitario">Universitario</option>
-                        </select><br><br>  
+                        </select><br><br -->  
+
+                        <select name="Ambito_web[]" onchange="toggleNomeAzienda(this)"> 
+                            <option value="">Seleziona...</option>
+                            <option value="Aziendale">Aziendale</option>
+                            <option value="Universitario">Universitario</option>
+                        </select><br><br>
+
+                        <div class="nome-azienda-field" style="display: none;">
+                            <label>Nome Azienda:</label>
+                            <input type="text" name="nome_azienda_applicativi[]"><br><br>
+                        </div>
+                        </select><br><br> 
+
                         <label>Durata attività (specificare mesi/anni):</label>
                         <input type="text" name="durata_web[]"><br><br>                                   
                         <label>Descrizione del progetto:</label>
@@ -1096,10 +1125,23 @@
                         <label>Tool utilizzati:</label>
                         <input type="text" name="tool_mobile[]"><br><br>           
                         <label>Ambito progetto:</label>
-                        <select name="Ambito_mobile[]">
+                        <!--select name="Ambito_mobile[]">
                             <option value="Aziendale">Aziendale</option>
                             <option value="Universitario">Universitario</option>
-                        </select><br><br>  
+                        </select><br><br-->  
+
+                        <select name="Ambito_mobile[]" onchange="toggleNomeAzienda(this)"> 
+                            <option value="">Seleziona...</option>
+                            <option value="Aziendale">Aziendale</option>
+                            <option value="Universitario">Universitario</option>
+                        </select><br><br>
+
+                        <div class="nome-azienda-field" style="display: none;">
+                            <label>Nome Azienda:</label>
+                            <input type="text" name="nome_azienda_applicativi[]"><br><br>
+                        </div>
+                        </select><br><br> 
+
                         <label>Durata attività (specificare mesi/anni):</label>
                         <input type="text" name="durata_mobile[]"><br><br>                                   
                         <label>Descrizione del progetto:</label>
@@ -1122,10 +1164,23 @@
                         <label>Tool utilizzati:</label>
                         <input type="text" name="tool_scada[]"><br><br>           
                         <label>Ambito progetto:</label>
-                        <select name="Ambito_scada[]">
+                        <!--select name="Ambito_scada[]">
                             <option value="Aziendale">Aziendale</option>
                             <option value="Universitario">Universitario</option>
-                        </select><br><br>    
+                        </select><br><br-->   
+                        
+                        <select name="Ambito_scada[]" onchange="toggleNomeAzienda(this)"> 
+                            <option value="">Seleziona...</option>
+                            <option value="Aziendale">Aziendale</option>
+                            <option value="Universitario">Universitario</option>
+                        </select><br><br>
+
+                        <div class="nome-azienda-field" style="display: none;">
+                            <label>Nome Azienda:</label>
+                            <input type="text" name="nome_azienda_applicativi[]"><br><br>
+                        </div>
+                        </select><br><br>                         
+
                         <label>Durata attività (specificare mesi/anni):</label>
                         <input type="text" name="durata_scada[]"><br><br>                                 
                         <label>Descrizione del progetto:</label>
@@ -1148,10 +1203,24 @@
                         <label>Tool utilizzati:</label>
                         <input type="text" name="tool_plc[]"><br><br>           
                         <label>Ambito progetto:</label>
-                        <select name="Ambito_plc[]">
+                        <!--select name="Ambito_plc[]">
                             <option value="Aziendale">Aziendale</option>
                             <option value="Universitario">Universitario</option>
-                        </select><br><br> 
+                        </select><br><br-->
+                        
+                        <select name="Ambito_plc[]" onchange="toggleNomeAzienda(this)"> 
+                            <option value="">Seleziona...</option>
+                            <option value="Aziendale">Aziendale</option>
+                            <option value="Universitario">Universitario</option>
+                        </select><br><br>
+
+                        <div class="nome-azienda-field" style="display: none;">
+                            <label>Nome Azienda:</label>
+                            <input type="text" name="nome_azienda_applicativi[]"><br><br>
+                        </div>
+                        </select><br><br>                          
+
+
                         <label>Durata attività (specificare mesi/anni):</label>
                         <input type="text" name="durata_plc[]"><br><br>                                    
                         <label>Descrizione del progetto:</label>
